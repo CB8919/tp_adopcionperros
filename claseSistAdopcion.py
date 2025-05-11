@@ -1,3 +1,6 @@
+from claseUserAdoptante import User_Adoptante
+from clasePerro import Perro
+
 class Sistem_Adopcion(object):
     def __init__(self):
         pass
