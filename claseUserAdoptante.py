@@ -40,27 +40,33 @@ class User_Adoptante(object):
             print("Que dato desea modificar?")
             print("\nSeleccione:")  
             print("Nombre: 1\nDNI: 2\nEmail: 3\nPreferencias: 4")
-            opcion = int(input("Opción:"))
-        
-        
-            if opcion == 1:
-                self.nombre = input("Nuevo Nombre: ")
-            elif opcion == 2:
-                self.dni = input("Nuevo DNI: ")
-            elif opcion == 3:
-                self.email = input("Nuevo email: ")
-            elif opcion == 4:
-                raza = input("Nueva raza: ")
-                tamano = input("Nuevo tamaño: ")
-                edad = input("Nueva edad:")
+            try:
 
-                self.preferencias = {
-                    "raza": raza,
-                    "tamaño": tamano,
-                    "edad": edad
-                }
-            else:
-                print("Porfavor ingrese 1, 2, 3 o 4 de lo contrario no podra modicar ningún dato")
+                opcion = int(input("Opción:"))
+        
+        
+                if opcion == 1:
+                    self.nombre = input("Nuevo Nombre: ")
+                elif opcion == 2:
+                    self.dni = input("Nuevo DNI: ")
+                elif opcion == 3:
+                    self.email = input("Nuevo email: ")
+                elif opcion == 4:
+                    raza = input("Nueva raza: ")
+                    tamano = input("Nuevo tamaño: ")
+                    edad = input("Nueva edad:")
+
+                    self.preferencias = {
+                        "raza": raza,
+                        "tamaño": tamano,
+                        "edad": edad
+                    }
+                else:
+                    print("Porfavor ingrese 1, 2, 3 o 4 de lo contrario no podra modicar ningún dato")
+                    continue # Para que vuelva al inicio del bucle
+            except ValueError:
+                print("Ingrese un número 1 2 3 o 4")
+                continue # Para que vuelva al inicio del bucle
     
             print("Quiere modificar otro dato?")
             respuesta = input("SI/NO").upper()
@@ -79,4 +85,3 @@ class User_Adoptante(object):
 
 #nuevo_usuario = User_Adoptante("Carlos", "32564789", "c@gmail.com", {"Labrador", "grande", "cachorro"}, ["Plaga"])
 #nuevo_usuario.modificar_datos()
-#nuevo_usuario.mostrar_user()
