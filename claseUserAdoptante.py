@@ -5,11 +5,32 @@ class User_Adoptante(object):
         self.email = email
         self.preferencias = preferencias # Raza, edad, tamaño
         self.histo_adop = histo_adop
-        pass
+        
 
         # Método para registrar a un usuario 
     def registro_user(self):
-        pass
+        print("---- REGISTRO DE USUARIO ----")
+        
+        print("Ingrese nombre, dni, email y preferncias.\nFavor de respetar el orden al ingresar los datos solicitados)")
+        self.nombre = input("Nombre: ")
+        self.dni = input("DNI: ")
+        self.email = input("Email: ")
+
+        print("Ingresar preferencias:")
+        raza = input("Raza preferida: ")
+        tamano = input("Tamaño preferido (grande, mediano, pequeño): ")
+        edad = input("Edad preferida (cachorro, joven, adulto): ")
+
+        self.preferencias = {
+            "raza": raza,
+            "tamaño": tamano,
+            "edad": edad
+        }        
+        self.histo_adop = []
+
+        usuario = User_Adoptante(self.nombre, self.dni, self.email, self.preferencias, self.histo_adop)
+
+        return usuario
 
         # Método para modificar, actualizar o borrar los datos del usuario
     def modificar_datos(self):
