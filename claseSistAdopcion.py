@@ -2,8 +2,10 @@ from claseUserAdoptante import User_Adoptante
 from clasePerro import Perro
 
 class Sistem_Adopcion(object):
-    def __init__(self):
-        pass
+    def __init__(self, list_usuario, list_perro):
+        self.list_usuario = []
+        self.list_perro = []
+        
 
         # Método para agregar un nuevo perro a la lista de adopción
     def cargar_perro(self):
@@ -28,3 +30,5 @@ class Sistem_Adopcion(object):
         # Método que retorna o muestra una lista de perros disponibles con sus estados
     def listado_perro(self):
         pass
+
+
