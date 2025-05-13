@@ -5,11 +5,12 @@ class User_Adoptante(object):
         self.email = email
         self.preferencias = preferencias # Raza, edad, tamaño
         self.histo_adop = histo_adop
+        
 
     def mostrar_user(self):
         print(f"Nombre: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferncias: {self.preferencias}\nHistorial de adopción: {self.historial()}")
 
-        # Método para registrar a un usuario 
+        # Método para registrar a un usuario
     def registro_user(self):
         print("---- REGISTRO DE USUARIO ----")
         
@@ -28,8 +29,7 @@ class User_Adoptante(object):
             "tamaño": tamano,
             "edad": edad
         }
-               
-        
+
         print("\n----- Datos del usuario -----\n\n")
         print(f"Nombre: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferncias: {self.preferencias}\nHistorial de adopción: {self.historial()}")
 
