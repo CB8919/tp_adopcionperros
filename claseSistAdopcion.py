@@ -8,8 +8,9 @@ class Sistem_Adopcion():
         
 
         # Método para agregar un nuevo perro a la lista de adopción
-    def cargar_perro(self):
-        pass
+    def cargar_perro(self, perro):
+        self.list_perro.append(perro)
+        
 
         # Método para eliminar un perro de la lista o ponerlo como adoptado
     def eliminar_perro(self):
