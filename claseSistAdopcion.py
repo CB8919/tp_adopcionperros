@@ -1,8 +1,8 @@
 from claseUserAdoptante import User_Adoptante
 from clasePerro import Perro
 
-class Sistem_Adopcion(object):
-    def __init__(self, list_usuario, list_perro):
+class Sistem_Adopcion():
+    def __init__(self):
         self.list_usuario = []
         self.list_perro = []
         
