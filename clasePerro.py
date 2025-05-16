@@ -1,10 +1,10 @@
 class Perro(object):
-    def __init__(self, id, nombre, raza, edad, tamaño, peso, estado_salud, vacunado, estado, temperamento):
+    def __init__(self, id, nombre, raza, edad, tamano, peso, estado_salud, vacunado, estado, temperamento):
         self.id = int(id)
         self.nombre = nombre
         self.raza = raza
-        self.edad = int(edad)
-        self.tamaño = tamaño  # Grande, mediano,pequeño
+        self.edad = edad # cachorro, joven, adulto
+        self.tamano = tamano  # Grande, mediano,pequeño
         self.peso = float(peso)
         self.estado_salud = estado_salud
         self.vacunado = vacunado # True o False
@@ -23,10 +23,10 @@ class Perro(object):
 
         # Métedo para mostrar la info del perro
     def mostrar_info(self):
-        return f"ID: {self.id}\nNombre: {self.nombre}\nRaza: {self.raza}\nEdad: {self.edad}\nTamaño: {self.tamaño}\nPeso: {self.peso}\nEstado de saludo: {self.estado_salud}\nVacunado: {self.vacunado}\nEstado: {self.estado}\nTemperamento: {self.temperamento}"
+        return f"ID: {self.id}\nNombre: {self.nombre}\nRaza: {self.raza}\nEdad: {self.edad}\nTamaño: {self.tamano}\nPeso: {self.peso}kg\nEstado de saludo: {self.estado_salud}\nVacunado: {self.vacunado}\nEstado: {self.estado}\nTemperamento: {self.temperamento}"
 
 
-perro = Perro(1, "Rex", "Pastor Alemán", 5, "Grande", 30.5, "Bueno", True, "Disponible", "Amigable")
+perro = Perro(1, "Rex", "Pastor Alemán", "cachorro", "Grande", 30.5, "Bueno", True, "Disponible", "Amigable")
 
 
 #print(perro.mostrar_info())
