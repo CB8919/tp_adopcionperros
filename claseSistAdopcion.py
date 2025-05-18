@@ -4,7 +4,7 @@ class Sistem_Adopcion():
     def __init__(self):
         self.list_usuario = []
         self.list_perro = []
-        
+        self.list_perro_adoptados = []
 
         # Método para agregar un nuevo perro a la lista de adopción
     def cargar_perro(self, perro):
@@ -32,9 +32,16 @@ class Sistem_Adopcion():
 
 
         # Método para cambiar el estado de un perro a adoptado
-    def confirmar_adop(self):
-        
-        pass
+    def confirmar_adop(self, id_perro):
+        for perro in self.list_perro:
+            if perro.id == id_perro:
+                self.list_perro.remove(perro)
+                self.list_perro_adoptados.append(perro)
+                print(f"El perro ID: {id_perro} fue adoptado con exito.")
+                return True
+        print(f"No se encontro ese ID: {id_perro}")
+        return False
+                
 
         # Método para filtra preferncias del usuario a la hora de adoptar
     def preferencia_perro(self, opcion, valor):
