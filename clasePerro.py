@@ -1,7 +1,7 @@
 class Perro(object):
     id_contador = 1 # Para aumentar el id del perro con cada perro nuevo que ingresa
 
-    def __init__(self, id_perro, nombre, raza, edad, tamano, peso, salud, vacunado, temperamento):
+    def __init__(self, nombre, raza, edad, tamano, peso, salud, vacunado, temperamento): #id_perro
         self.id = Perro.id_contador
         Perro.id_contador = Perro.id_contador + 1
         self.nombre = nombre
@@ -11,7 +11,7 @@ class Perro(object):
         self.peso = float(peso)
         self.salud = salud
         self.vacunado = vacunado # True o False
-        self.estado_de_adopcion = "Disponible" # Disponible, reservado, adoptado
+        self.estado_de_adopcion = "disponible" # disponible, reservado, adoptado
         self.temperamento = temperamento
         
 
@@ -29,6 +29,13 @@ class Perro(object):
         return (f"ID: {self.id}\nNombre: {self.nombre}\nRaza: {self.raza}\nEdad: {self.edad}\nTamaño: {self.tamano}\nPeso: {self.peso}kg\nSalud: {self.salud}\nVacunado: {self.vacunado}\nEstado: {self.estado_de_adopcion}\nTemperamento: {self.temperamento}")
 
 
+perro1 = Perro(nombre="Max", raza="Labrador", edad="adulto", tamano="grande", peso=30, salud="buena", vacunado=True, temperamento="calmado")
+perro2 = Perro(nombre="Luna", raza="Beagle", edad="joven", tamano="mediano", peso=15, salud="excelente", vacunado=False, temperamento="activo")
+perro3 = Perro(nombre="Coco", raza="Bulldog", edad="cachorro", tamano="pequeño", peso=8, salud="regular", vacunado=True, temperamento="tranquilo")
+
+print(perro1.mostrar_info())
+print(perro2.mostrar_info())
+print(perro3.mostrar_info())
 
 
 
