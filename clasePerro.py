@@ -1,4 +1,4 @@
-class Perro(object):
+class Perro():
     id_contador = 1 # Para aumentar el id del perro con cada perro nuevo que ingresa
 
     def __init__(self, nombre, raza, edad, tamano, peso, salud, vacunado, temperamento): #id_perro
@@ -32,7 +32,6 @@ class Perro(object):
 perro1 = Perro(nombre="Max", raza="Labrador", edad="adulto", tamano="grande", peso=30, salud="buena", vacunado=True, temperamento="calmado")
 perro2 = Perro(nombre="Luna", raza="Beagle", edad="joven", tamano="mediano", peso=15, salud="excelente", vacunado=False, temperamento="activo")
 perro3 = Perro(nombre="Coco", raza="Bulldog", edad="cachorro", tamano="pequeño", peso=8, salud="regular", vacunado=True, temperamento="tranquilo")
-
 print(perro1.mostrar_info())
 print(perro2.mostrar_info())
 print(perro3.mostrar_info())
