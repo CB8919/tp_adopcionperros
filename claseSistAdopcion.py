@@ -1,4 +1,5 @@
 from clasePerro import Perro
+from claseUserAdoptante import User_Adoptante
 
 class Sistem_Adopcion():
     def __init__(self):
@@ -36,6 +37,7 @@ class Sistem_Adopcion():
         for perro in self.list_perro:
             if perro.id == id_perro:
                 self.list_perro.remove(perro)
+                perro.cambiar_estado("adoptado")
                 self.list_perro_adoptados.append(perro)
                 print(f"El perro ID: {id_perro} fue adoptado con exito.")
                 return True
@@ -48,6 +50,8 @@ class Sistem_Adopcion():
         filtrado = []
 
         for perro in self.list_perro:
+            if perro.estado_de_adopcion != "disponible":
+                continue
             if opcion == "raza" and perro.raza == valor:
                 filtrado.append(perro)
             elif opcion == "edad" and perro.edad == valor:
@@ -59,12 +63,18 @@ class Sistem_Adopcion():
                 
         # Método que retorna o muestra una lista de perros disponibles con sus estados
     def listado_perro(self):
-        disponible = []
+        print("Listado de perros:\n")
+        i = 1
         for perro in self.list_perro:
-            if perro.estado_de_adopcion == "Disponible":
-                disponible.append(perro)
-        return disponible
-            
+            i = i + 1
+            print(f"{i}. ID: {perro.id}\nNombre: {perro.nombre}\nRaza: {perro.raza}\nEdad: {perro.edad}\nTamaño: {perro.tamano}\nPeso: {perro.peso}\nSalud: {perro.salud}\nVacunado: {perro.vacunado}\nEstado de adopción: {perro.estado_de_adopcion}\nTemperamento: {perro.temperamento}")    
+        
+
+        #disponible = []
+        #for perro in self.list_perro:
+        #    if perro.estado_de_adopcion == "disponible"
+        #        disponible.append(perro)
+        #return disponible  
     
 
 #r = Sistem_Adopcion()
@@ -73,3 +83,13 @@ class Sistem_Adopcion():
 
 
 
+# Esto haría que sí se considere usado:
+p = Perro("Luna", "Labrador", "joven", "mediano", 20, "saludable", True, "tranquila")
+
+p1 = Perro("Firulais", "Labrador", "joven", "mediano", 20, "saludable", True, "tranquilo")
+
+user1 = User_Adoptante("Carla", "12345678", "carla@gmail.com", {"raza": "Labrador"})
+
+user1.histo_adop.append(p1)
+
+user1.mostrar_user()
