@@ -1,16 +1,15 @@
+class User_Adoptante():
 
-
-class User_Adoptante(object):
-    def __init__(self, nombre, dni, email, preferencias):
+    def __init__(self, nombre, dni, email, preferencia):
         self.nombre = nombre
         self.dni = dni
         self.email = email
-        self.preferencias = preferencias # {Raza, edad(cachorro/joven/adulto), tamaño}
+        self.preferencia = preferencia # {Raza, edad(cachorro/joven/adulto), tamaño}
         self.histo_adop = []
         
         # Método para registrar a un usuario
     def registrarse(self):
-        return f"Usuario registrado: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferencias: {self.preferencias}\nHistorial de adopción: {self.historial()}"
+        return f"Usuario registrado: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferencias: {self.preferencia}\nHistorial de adopción: {self.historial()}"
     
         # Método para modificar datos
     def modificar_datos(self, nuevo_nombre = None, nuevo_email = None, nueva_preferencia = None): #None para omitir si algún dato no se quiere modificar
@@ -19,16 +18,16 @@ class User_Adoptante(object):
         if nuevo_email:
             self.email = nuevo_email
         if nueva_preferencia:    
-            self.preferencias = nueva_preferencia
+            self.preferencia = nueva_preferencia
 
 
-        return f"Datos modificados:\nNombre: {nuevo_nombre}\nDNI: {self.dni}\nEmail: {nuevo_email}\nPreferencias: {nueva_preferencia}"
+        return f"Datos modificados:\nNombre: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferencias: {self.preferencia}"
         # Método para borrar los datos
     def borrar_datos(self):
         self.nombre = ""
         self.dni = ""
         self.email = ""
-        self.preferencias = {}
+        self.preferencia = {}
         self.histo_adop = []
 
         
@@ -40,10 +39,14 @@ class User_Adoptante(object):
         if self.histo_adop == []:
             return "No hay adopciones realizadas"
         else:
-            return f"Historial de adopciones: {self.histo_adop} "
+            historial = ""
+            for perro in self.histo_adop:
+                historial += f"{perro.nombre} ID: {perro.id}\n"
+
+            return f"Historial de adopciones: {historial} "
         
     def mostrar_user(self):
-        print(f"Nombre: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferencias: {self.preferencias}\nHistorial de adopción: {self.historial()}")
+        print(f"Nombre: {self.nombre}\nDNI: {self.dni}\nEmail: {self.email}\nPreferencias: {self.preferencia}\nHistorial de adopción: {self.historial()}")
 
 
 
