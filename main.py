@@ -6,6 +6,17 @@ from claseUserAdoptante import User_Adoptante
 def main():
 
     sistem = Sistem_Adopcion()
+    
+    """
+    perro1 = Perro("Max", "Labrador", "adulto", "grande", 30, "buena", True, "calmado")
+    perro2 = Perro("Luna", "Beagle", "joven", "mediano", 15, "excelente", False, "activo")
+    perro3 = Perro("Coco", "Bulldog", "cachorro", "pequeño", 8, "regular", True, "tranquilo")
+
+    sistem.cargar_perro(perro1)
+    sistem.cargar_perro(perro2)
+    sistem.cargar_perro(perro3)
+    """
+
 
     print("     ---------- Bienvenidos a ADOPDOG ---------- ")
     print("\n * Donde una nueva historia comienza con un ladrido *\n\n\nEn este sitio vas a encontrar perros que buscan un hogar.\nSon cariñosos,  únicos y están esperando una familia como la tuya.\nAdoptar es fácil y cambia vidas, la de ellos... y la tuya también.")
@@ -47,6 +58,7 @@ def main():
                 sistem.cargar_perro(new_perro)
 
                 print("Se cargo correctamente", flush = True)
+                print(new_perro.mostrar_info())
 
                 # Eliminar un perro
             elif eleccion == "e":
