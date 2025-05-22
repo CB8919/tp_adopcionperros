@@ -36,7 +36,7 @@ class User_Adoptante():
 
         # Método para mostrar su historial de adopción si lo tiene, o simplemente mostrar todos los datos del usuario
     def historial(self):
-        if self.histo_adop == []:
+        if not self.histo_adop:
             return "No hay adopciones realizadas"
         else:
             historial = ""
