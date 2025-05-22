@@ -63,11 +63,14 @@ class Sistem_Adopcion():
                 
         # Método que retorna o muestra una lista de perros disponibles con sus estados
     def listado_perro(self):
+        if not self.list_perro:
+            print("No hay perros registrados hasta el momento")
+            return
         print("Listado de perros:\n")
         i = 1
         for perro in self.list_perro:
-            i = i + 1
-            print(f"{i}. ID: {perro.id}\nNombre: {perro.nombre}\nRaza: {perro.raza}\nEdad: {perro.edad}\nTamaño: {perro.tamano}\nPeso: {perro.peso}\nSalud: {perro.salud}\nVacunado: {perro.vacunado}\nEstado de adopción: {perro.estado_de_adopcion}\nTemperamento: {perro.temperamento}")    
+            print(f"{i}. ID: {perro.id}\nNombre: {perro.nombre}\nRaza: {perro.raza}\nEdad: {perro.edad}\nTamaño: {perro.tamano}\nPeso: {perro.peso}\nSalud: {perro.salud}\nVacunado: {perro.vacunado}\nEstado de adopción: {perro.estado_de_adopcion}\nTemperamento: {perro.temperamento}")
+            i = i + 1    
         
 
         #disponible = []
@@ -82,14 +85,11 @@ class Sistem_Adopcion():
 #print(nuevo_perro.mostrar_info())
 
 
+s = Sistem_Adopcion()
+perro1 = Perro(nombre="Max", raza="Labrador", edad="adulto", tamano="grande", peso=30, salud="buena", vacunado=True, temperamento="calmado")
+perro2 = Perro(nombre="Luna", raza="Beagle", edad="joven", tamano="mediano", peso=15, salud="excelente", vacunado=False, temperamento="activo")
+perro3 = Perro(nombre="Coco", raza="Bulldog", edad="cachorro", tamano="pequeño", peso=8, salud="regular", vacunado=True, temperamento="tranquilo")
 
-# Esto haría que sí se considere usado:
-p = Perro("Luna", "Labrador", "joven", "mediano", 20, "saludable", True, "tranquila")
-
-p1 = Perro("Firulais", "Labrador", "joven", "mediano", 20, "saludable", True, "tranquilo")
-
-user1 = User_Adoptante("Carla", "12345678", "carla@gmail.com", {"raza": "Labrador"})
-
-user1.histo_adop.append(p1)
-
-user1.mostrar_user()
+s.cargar_perro(perro1)
+s.cargar_perro(perro2)
+s.cargar_perro(perro3)
